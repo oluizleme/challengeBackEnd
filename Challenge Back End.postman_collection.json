@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "8f2ac39c-a60a-4bae-9c6d-80f4f6b786fd",
+		"name": "Challenge Back End",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17844669"
+	},
+	"item": [
+		{
+			"name": "listarTodosOsVideos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{servidor}}:8080/videos",
+					"protocol": "http",
+					"host": [
+						"{{servidor}}"
+					],
+					"port": "8080",
+					"path": [
+						"videos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "salvarUmVideo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\":\"O que faz um CTO\",\r\n    \"descricao\": \"O que faz um CTO com Fabio Akita\",\r\n    \"url\": \"https://www.youtube.com/watch?v=H-GrnWRc2i4\"\r\n}"
+				},
+				"url": {
+					"raw": "http://{{servidor}}:8080/videos",
+					"protocol": "http",
+					"host": [
+						"{{servidor}}"
+					],
+					"port": "8080",
+					"path": [
+						"videos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletarUmVideo",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{servidor}}:8080/videos/1",
+					"protocol": "http",
+					"host": [
+						"{{servidor}}"
+					],
+					"port": "8080",
+					"path": [
+						"videos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "atualizarUmVideo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\":\"Como aprender melhor Alura?\",\r\n    \"descricao\": \"Dicas de aprendizagem dos instrutores da Alura e seus convidados\",\r\n    \"url\": \"https://www.youtube.com/watch?v=uOagLB3uyeU&t=1s\"\r\n}"
+				},
+				"url": {
+					"raw": "http://{{servidor}}:8080/videos/1",
+					"protocol": "http",
+					"host": [
+						"{{servidor}}"
+					],
+					"port": "8080",
+					"path": [
+						"videos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "atualizarTituloEDescricao",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\":\"Como aprender melhor com a Alura?\",\r\n    \"descricao\": \"Dicas de aprendizagem dos instrutores da Alura\"\r\n}"
+				},
+				"url": {
+					"raw": "http://{{servidor}}:8080/videos/1",
+					"protocol": "http",
+					"host": [
+						"{{servidor}}"
+					],
+					"port": "8080",
+					"path": [
+						"videos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
