@@ -20,8 +20,12 @@ public class VideoController {
 
 
     @GetMapping("/{id}")
-    Video obterVideo(@PathVariable("id") Long id) {
-        return repositorioVideo.findById(id).get();
+    ResponseEntity<Video> obterVideo(@PathVariable("id") Long id) {
+        Optional<Video> optional = repositorioVideo.findById(id);
+        if(optional.isPresent()) {
+            return ResponseEntity.ok(optional.get());
+        }
+        return ResponseEntity.notFound().build();
     }
 
     @GetMapping
